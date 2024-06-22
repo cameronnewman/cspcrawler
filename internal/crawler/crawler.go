@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/cameronnewman/cspcrawler/csp"
+	csp2 "github.com/cameronnewman/cspcrawler/internal/csp"
 	"github.com/goware/urlx"
 	"github.com/joeguo/tldextract"
 	"net/http"
@@ -123,7 +123,7 @@ func (c *Crawler) Run() {
 		})
 	}
 
-	policy, err := csp.ParsePolicy(rawPolicy)
+	policy, err := csp2.ParsePolicy(rawPolicy)
 	if err != nil {
 		writeToStdOut([]ContentSecurityPolicy{
 			{
@@ -138,7 +138,7 @@ func (c *Crawler) Run() {
 	}
 
 	directives := map[string]string{}
-	for _, k := range csp.AllDirectives {
+	for _, k := range csp2.AllDirectives {
 		d, ok := policy.Directives[k]
 		if ok {
 			directives[k] = d.Get()

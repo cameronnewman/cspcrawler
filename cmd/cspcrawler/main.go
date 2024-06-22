@@ -3,9 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/cameronnewman/cspcrawler/internal/crawler"
 	"os"
-
-	"github.com/cameronnewman/cspcrawler/crawler"
 )
 
 func main() {

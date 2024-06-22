@@ -1,7 +1,6 @@
 package csp
 
 import (
-	"fmt"
 	"net/url"
 	"strings"
 
@@ -23,8 +22,6 @@ func ParsePolicy(policy string) (Policy, error) {
 		Directives: map[string]Directive{},
 	}
 
-	fmt.Println(policy)
-
 	policy = strings.TrimSpace(policy)
 
 	directiveDefs := strings.Split(policy, ";")
@@ -40,7 +37,6 @@ func ParsePolicy(policy string) (Policy, error) {
 		}
 
 		directiveType := fields[0]
-		fmt.Println(directiveType)
 
 		switch directiveType {
 
