@@ -48,11 +48,6 @@ lint: version ## Runs more than 60 different linters using golangci-lint, shellc
 	$(LINT_IMAGE) \
 	golangci-lint run --timeout=2m
 
-	find . -name "*.sh" | xargs docker run --rm \
-	-v $(PWD):/usr/src/app \
-	-w /usr/src/app \
-	$(SHELL_LINT_IMAGE)
-
 	docker run --rm \
 	-v $(PWD):/work \
 	-w /work \
