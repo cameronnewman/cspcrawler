@@ -65,3 +65,18 @@ test: version ## Runs `go test` within a docker container
 	go test -cover -race -coverprofile=coverage.txt -v -p 8 -count=1 ./...
 
 	@echo "Completed tests"
+
+.PHONY: build
+build: ## Runs `go build` within a docker container
+	@echo "+++ $$(date) - Running 'go build'"
+
+	DOCKER_BUILDKIT=1 \
+	docker run --rm \
+	-e VERSION=$(SHA1) \
+	-v $(PWD):/usr/src/app \
+	-w /usr/src/app \
+	--entrypoint=bash \
+	$(BUILD_IMAGE) \
+	-c "cd /usr/src/app && go build /usr/src/app/cmd/cspcrawler"
+
+	@echo "$$(date) - Completed 'go build'"
