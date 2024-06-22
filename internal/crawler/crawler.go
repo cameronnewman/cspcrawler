@@ -31,8 +31,13 @@ func New(u string) (*Crawler, error) {
 		return &Crawler{}, err
 	}
 
+	seedURL := u
+	if len(rawURL.Scheme) == 0 {
+		seedURL = "https://" + u
+	}
+
 	c := &Crawler{
-		SeedRawURL: u,
+		SeedRawURL: seedURL,
 		SeedURL:    rawURL,
 	}
 

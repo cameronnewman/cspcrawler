@@ -69,7 +69,9 @@ test: version ## Runs `go test` within a docker container
 .PHONY: build
 build: ## Runs `go build` within a docker container
 	@echo "+++ $$(date) - Running 'go build'"
-
+ifeq ($(ENVIRONMENT),local)
+	go build $(PWD)/cmd/cspcrawler
+else
 	DOCKER_BUILDKIT=1 \
 	docker run --rm \
 	-e VERSION=$(SHA1) \
@@ -78,5 +80,5 @@ build: ## Runs `go build` within a docker container
 	--entrypoint=bash \
 	$(BUILD_IMAGE) \
 	-c "cd /usr/src/app && go build /usr/src/app/cmd/cspcrawler"
-
+endif
 	@echo "$$(date) - Completed 'go build'"

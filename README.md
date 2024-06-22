@@ -8,6 +8,8 @@ a simple Content Security Policy crawler
 Usage
 
 ```
+lappy:~ johnwick$ make build
+
 lappy:~ johnwick$ ./cspcrawler --url https://google.com
 [
 	{
