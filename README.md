@@ -10,7 +10,7 @@ Usage
 ```
 lappy:~ johnwick$ make build
 
-lappy:~ johnwick$ ./cspcrawler --url https://google.com
+lappy:~ johnwick$ ./cspcrawler --url google.com
 [
 	{
 		"domain": "https://google.com",
