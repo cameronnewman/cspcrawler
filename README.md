@@ -1,6 +1,6 @@
 # cspcrawler
 
-[![Continuous Integration](https://github.com/cameronnewman/cspcrawler/actions/workflows/pipeline.yml/badge.svg)](https://github.com/cameronnewman/cspcrawler/actions/workflows/pipeline.yml) [![GoDoc](https://godoc.org/github.com/cameronnewman/cspcrawler?status.svg)](http://godoc.org/github.com/cameronnewman/cspcrawler) [![Report card](https://goreportcard.com/badge/github.com/cameronnewman/cspcrawler)](https://goreportcard.com/report/github.com/cameronnewman/cspcrawler)
+[![Continuous Integration](https://github.com/cameronnewman/cspcrawler/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/cameronnewman/cspcrawler/actions/workflows/pipeline.yml) [![GoDoc](https://godoc.org/github.com/cameronnewman/cspcrawler?status.svg)](http://godoc.org/github.com/cameronnewman/cspcrawler) [![Report card](https://goreportcard.com/badge/github.com/cameronnewman/cspcrawler)](https://goreportcard.com/report/github.com/cameronnewman/cspcrawler)
 
 a simple Content Security Policy crawler
 
